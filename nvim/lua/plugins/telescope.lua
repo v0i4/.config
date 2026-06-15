@@ -5,8 +5,7 @@ return {
     cmd = "Telescope",
     dependencies = { "nvim-lua/plenary.nvim" },
     keys = {
-      { "<leader>ff", "<cmd>Telescope find_files<cr>",  desc = "Find files" },
-      { "<leader>fg", "<cmd>Telescope live_grep<cr>",   desc = "Live grep" },
+      -- find_files / live_grep are owned by fff.nvim (see plugins/fff.lua)
       { "<leader>fb", "<cmd>Telescope buffers<cr>",     desc = "Find buffers" },
       { "<leader>fh", "<cmd>Telescope help_tags<cr>",   desc = "Help tags" },
       { "<leader>fr", "<cmd>Telescope oldfiles<cr>",    desc = "Recent files" },
