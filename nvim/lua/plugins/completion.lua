@@ -6,7 +6,10 @@ return {
     event = "InsertEnter",
     dependencies = { "L3MON4D3/LuaSnip" },
     opts = {
-      keymap = { preset = "default" }, -- <C-y> accept, <C-n>/<C-p> navigate, <C-space> menu
+      keymap = {
+        preset = "default", -- <C-y> accept, <C-n>/<C-p> navigate, <C-space> menu
+        ["<CR>"] = { "select_and_accept", "fallback" }, -- Enter accepts selected item when menu is open
+      },
       appearance = { nerd_font_variant = "mono" },
       snippets = { preset = "luasnip" },
       sources = {

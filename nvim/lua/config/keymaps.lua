@@ -4,11 +4,8 @@ local map = vim.keymap.set
 -- Clear search highlight / dismiss messages
 map("n", "<Esc>", "<cmd>nohlsearch<cr>", { desc = "Clear search highlight" })
 
--- Window navigation
-map("n", "<C-h>", "<C-w>h", { desc = "Go to left window" })
-map("n", "<C-j>", "<C-w>j", { desc = "Go to lower window" })
-map("n", "<C-k>", "<C-w>k", { desc = "Go to upper window" })
-map("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
+-- Window navigation: owned by tmux.nvim (plugins/tmux.lua) so <C-h/j/k/l>
+-- also cross into tmux panes at the edge of the nvim window.
 
 -- Buffer navigation
 map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next buffer" })
