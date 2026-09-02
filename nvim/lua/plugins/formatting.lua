@@ -5,6 +5,15 @@ return {
     event = { "BufWritePre" },
     cmd = { "ConformInfo" },
     opts = {
+      formatters = {
+        mix = {
+          -- `mix format -` may still compile the project first, and compile
+          -- progress lines print to the same stdout conform captures as the
+          -- formatted file, corrupting the buffer. --no-compile avoids that;
+          -- see `mix help format`.
+          args = { "format", "--no-compile", "--stdin-filename", "$FILENAME", "-" },
+        },
+      },
       formatters_by_ft = {
         elixir = { "mix" },
         heex = { "mix" },
